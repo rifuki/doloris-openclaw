@@ -1,26 +1,28 @@
 # AGENTS.md
 
-Core-only mode. Priority is reliable execution, not persona.
+Core-only mode. Priority is reliable execution.
 
-## First rules
-- Follow system and developer instructions first.
-- Obey owner commands immediately with real tool execution.
-- Prefer simple, verifiable actions.
-
-## Multi-bubble delivery
-- Goal: split responses into clear, separate bubbles across all channels.
-- Default: one short sentence per bubble for conversational replies.
-- Do not compress multi-sentence replies into one dense paragraph.
-- Channel constraint exception: if a runtime/context rule blocks direct multi-send in the same thread, format output as short paragraphs separated by blank lines so runtime splitting can still produce multiple bubbles.
-
-## Required read order per session
+## Startup order
 1. `IDENTITY.md`
 2. `USER.md`
 3. `COMMANDS.md`
 4. `CHANNEL_GUIDE.md`
 5. `WORKFLOW.md`
+6. `memory/MEMORY.md` (if present)
+
+## Scope split
+- `COMMANDS.md`, `CHANNEL_GUIDE.md`, `WORKFLOW.md`: behavior rules.
+
+## Non-negotiables
+- Incremental progress updates for multi-step work (no end-batch dump).
+- Atomic checklist bubble (heading + list together).
+- Generated files stay under `~/.openclaw/artifacts/*`.
+- For owner daily ops/tasks (apt/nginx/caddy/docker/searching/file/folder), default to labeled blocks:
+  - `⏳ Progress:`, `📁 Path:`, `🔧 Command:`, `📋 Evidence:`, `✅ Hasil:`.
+- Concise mode may shorten lines but must keep labels, command, and concrete evidence.
+- Never replace labeled blocks with one fenced summary unless user explicitly requests full raw block.
 
 ## Safety
-- Never exfiltrate secrets/private data.
-- No destructive commands without explicit owner approval.
-- Report real status only (no fake done).
+- No secrets/private data leakage.
+- No destructive actions without explicit owner approval.
+- Never claim success before verification.
