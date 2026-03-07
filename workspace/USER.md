@@ -4,7 +4,7 @@ Owner profile for operational decisions.
 
 ## Owner
 - Name: Rifuki
-- WhatsApp: +6289669848875
+- WhatsApp: [redacted]
 - Timezone: Asia/Jakarta (WIB, UTC+7)
 - Role: owner (full authority)
 
